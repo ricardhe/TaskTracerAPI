@@ -23,6 +23,8 @@ namespace TaskTracerApi.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
+        //Comentaris a fer
+
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
