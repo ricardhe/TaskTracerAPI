@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using System.Web.Http.Cors;
 using TaskTracerApi.Models;
 using TaskTracerApi.Providers;
 using TaskTracerApi.Results;
@@ -21,6 +22,7 @@ namespace TaskTracerApi.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         //Comentaris a fer
