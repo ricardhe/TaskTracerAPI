@@ -32,6 +32,8 @@ namespace TaskTracerApi.Models
         public bool HasRegistered { get; set; }
 
         public string LoginProvider { get; set; }
+
+
     }
 
     public class UserLoginInfoViewModel
@@ -40,4 +42,28 @@ namespace TaskTracerApi.Models
 
         public string ProviderKey { get; set; }
     }
+
+    public class ExtendedUserInfoViewModel
+    {
+        public string id { get; set; }
+
+        public string Email { get; set; }
+
+        public bool HasRegistered { get; set; }
+
+        public string LoginProvider { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Sex { get; set; }
+
+        public System.DateTime DateOfBirth { get; set; }
+
+        public string UserName { get; set; }
+
+    }
+
+
 }

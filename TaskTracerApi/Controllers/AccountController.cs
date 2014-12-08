@@ -22,7 +22,7 @@ namespace TaskTracerApi.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[EnableCors(origins: "http://localhost:9000", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         //Comentaris a fer
@@ -69,6 +69,41 @@ namespace TaskTracerApi.Controllers
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
+
+        // GET api/Account/ExtendedUserInfo
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("ExtendedUserInfo")]
+        public ExtendedUserInfoViewModel GetExtendedUserInfo()
+        {
+            ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
+            
+            string id = User.Identity.GetUserId();
+
+            var user = UserManager.FindById(id);
+
+            if (user!=null)
+            {
+                
+                return new ExtendedUserInfoViewModel
+                {
+                    Email = User.Identity.GetUserName(),
+                    HasRegistered = externalLogin == null,
+                    LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null,
+                    FirstName = user.FirstName,
+                    LastName=user.LastName,
+                    Sex=user.Sex,
+                    DateOfBirth=user.DateOfBirth,
+                    UserName=user.UserName
+                };
+            }
+            else 
+            {
+                return null;
+            }
+
+
+        }
+
 
         // POST api/Account/Logout
         [Route("Logout")]
@@ -332,7 +367,11 @@ namespace TaskTracerApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, 
+                                               Email = model.Email,
+                                               FirstName = model.FirstName,
+                                               LastName=model.LastName
+                                            };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

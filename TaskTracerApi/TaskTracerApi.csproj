@@ -225,6 +225,18 @@
     <Compile Include="Migrations\201410242219558_WorkGroupCreation.Designer.cs">
       <DependentUpon>201410242219558_WorkGroupCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201412082116164_AfegintDosCampsAlUser.cs" />
+    <Compile Include="Migrations\201412082116164_AfegintDosCampsAlUser.Designer.cs">
+      <DependentUpon>201412082116164_AfegintDosCampsAlUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412082126317_AfegintMesCampsAlUser.cs" />
+    <Compile Include="Migrations\201412082126317_AfegintMesCampsAlUser.Designer.cs">
+      <DependentUpon>201412082126317_AfegintMesCampsAlUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412082128207_ModificantMesCampsAlUser.cs" />
+    <Compile Include="Migrations\201412082128207_ModificantMesCampsAlUser.Designer.cs">
+      <DependentUpon>201412082128207_ModificantMesCampsAlUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -307,6 +319,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410242219558_WorkGroupCreation.resx">
       <DependentUpon>201410242219558_WorkGroupCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412082116164_AfegintDosCampsAlUser.resx">
+      <DependentUpon>201412082116164_AfegintDosCampsAlUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412082126317_AfegintMesCampsAlUser.resx">
+      <DependentUpon>201412082126317_AfegintMesCampsAlUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412082128207_ModificantMesCampsAlUser.resx">
+      <DependentUpon>201412082128207_ModificantMesCampsAlUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
